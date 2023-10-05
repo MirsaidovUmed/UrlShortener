@@ -10,6 +10,15 @@ class ShortUrlController extends Controller
     public function short(ShortRequest $request)
     {
         if($request->original_url){
+            if(auth()->user()){
+                $new_url = auth()->links()->create([
+                    'original_url' => $request->original_url
+                ]);
+            }else{
+                $new_url = ShortUrl::create([
+                    'original_url' => $request->original_url
+                ]);
+            }
             $new_url = ShortUrl::create([
                 'original_url' => $request->original_url
             ]);
@@ -26,7 +35,7 @@ class ShortUrlController extends Controller
 
     public function show($code)
     {
-        $short_url = ShortUrl::where('short_url', $code)->fisrt();
+        $short_url = ShortUrl::where('short_url', $code)->first();
 
         if($short_url){
             return redirect()->to(url($short_url->original_url));
