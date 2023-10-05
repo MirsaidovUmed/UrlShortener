@@ -1,4 +1,4 @@
-Конечно, вот пример README.md файла для проекта URL Shortener на Laravel:
+Пока что проект находится на стадии разработки.
 
 # URL Shortener на Laravel
 
