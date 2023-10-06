@@ -33,3 +33,4 @@ require __DIR__.'/auth.php';
 Route::get('links', [App\Http\Controllers\ShortUserController::class, 'index'])->name('user.links')->middleware('auth');
 Route::post('/short', [\App\Http\Controllers\ShortUrlController::class, 'short'])->name('short.url');
 Route::get('/{code}', [\App\Http\Controllers\ShortUrlController::class, 'show'])->name('short.show');
+Route::delete('/delete/{id}', [\App\Http\Controllers\ShortUrlController::class, 'destroy'])->name('short.delete');

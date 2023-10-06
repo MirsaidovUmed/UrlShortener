@@ -39,4 +39,9 @@ class ShortUrlController extends Controller
         }
         return redirect()->to(url('/'));
     }
+    public function destroy(ShortUrl $links ,$id){
+        $links = ShortUrl::findOrFail($id);
+        $links->delete();
+        return redirect()->back()->with('success_message', 'Your Short url are deleted');
+    }
 }
