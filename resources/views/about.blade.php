@@ -11,11 +11,11 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="{{route('about')}}">About</a></li>
+                <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="./mylink.html">My links</a></li>
-                <li><a href="">Log in </a></li>
-                <li class="register"><a href="#">Register</a></li>
+                <li><a href="#">My links</a></li>
+                <li><a href="{{route('login')}}">Login </a></li>
+                <li class="register"><a href="{{route('register')}}">Register</a></li>
             </ul>
         </nav>
     </header>

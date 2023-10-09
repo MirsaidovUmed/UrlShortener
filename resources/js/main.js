@@ -3,7 +3,7 @@ let generate = document.getElementById("generate");
 let shorten_link = document.getElementById("shorten_link");
 let copy = document.getElementById("copy");
 
-//     REGISTER   //// / // / / / / / / 
+//     REGISTER   //// / // / / / / / /
 document.getElementById("registration-form").addEventListener("submit", function(e) {
     e.preventDefault();
     var name = document.getElementById("name").value;
@@ -11,17 +11,17 @@ document.getElementById("registration-form").addEventListener("submit", function
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirm-password").value;
- 
+
     // Find error password
     if (password !== confirmPassword) {
        alert("Passwords do not match");
        return;
     }
- 
+
     // Send form
     alert("Registration successful!");
     document.getElementById("registration-form").reset();
- }); 
+ });
 let register = document.querySelector(".register")
 let modal1 = document.querySelector(".modal1")
 let close = document.querySelector(".close")
@@ -37,7 +37,7 @@ register.onclick = () =>
 generate.addEventListener("click",()=>
 {
     let url = original_link.value;
-    fetch(`https://api.shrtco.de/v2/shorten?url=${url}/very/long/link.html`)
+    fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
     .then((resp)=>resp.json())
     .then((value)=>{
         shorten_link.value = value.result.short_link;
