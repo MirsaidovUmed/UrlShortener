@@ -1,22 +1,74 @@
-<x-guest-layout>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="p-6 flex justify-center bg-white border-b border-gray-200">
-                <section>
-                    <h1 class="text-4xl text-blue-800">Short you link</h1>
-                    @if (session('success_message'))
-                        {!! session('success_message') !!}
-                    @endif
-                    <form method="POST" action="{{route('short.url')}}">
-                        @csrf
-                        <input class="border border-gray-300 rounded-lg" type="url" name="original_url">
-                        @error('original_url')
-                            <span class="text-red-400 m-2 p-2">{{$message}}</span>
-                        @enderror
-                        <button class="m-2 px-6 py-2 bg-green-500 hover:bg-green-700 rounded-lg" type="submit">Short</button>
-                    </form>
-                </section>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="./mylink.blade.php">My links</a></li>
+                <li><a href="">Log in </a></li>
+                <li class="register"><a href="#">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="conteiner">
+        <div class="box">
+            <div class="content1">
+                <input type="url" placeholder="Insert your link..." class="input" id="original_link">
+                <button id="generate">Shorten</button>
+            </div>
+            <div class="content2">
+                <input type="text" class="input" id="shorten_link">
+                <button id="copy">Copy</button>
             </div>
         </div>
     </div>
-</x-guest-layout>
+    <dialog class="modal1">
+        <div class="container">
+            <form class="formRegister" id="registration-form" action="#">
+                <h2 class="abc">Registration Form</h2>
+
+                <div class="form-group">
+                    <label class="labelho" for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="labelho" for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="labelho" for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="labelho" for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="labelho" for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                    <button class="close">Close</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="../js/main.js"></script>
+    </body>
+    </html>
