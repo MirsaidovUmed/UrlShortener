@@ -11,11 +11,11 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="./about.html">About</a></li>
+                <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="./mylink.blade.php">My links</a></li>
-                <li><a href="">Log in </a></li>
-                <li class="register"><a href="#">Register</a></li>
+                <li><a href="#">My links</a></li>
+                <li><a href="{{route('login')}}">Log in</a></li>
+                <li class="register"><a href="{{route('register')}}">Register</a></li>
             </ul>
         </nav>
     </header>
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <dialog class="modal1">
+    <!--<dialog class="modal1">
         <div class="container">
             <form class="formRegister" id="registration-form" action="#">
                 <h2 class="abc">Registration Form</h2>
@@ -67,7 +67,7 @@
                 </div>
             </form>
         </div>
-    </dialog>
+    </dialog>-->
 
     <script src="../js/main.js"></script>
     </body>

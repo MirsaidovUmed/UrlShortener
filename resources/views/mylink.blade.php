@@ -20,7 +20,7 @@
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./about.html">About</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="./mylink.html">My links</a></li>
+                    <li><a href="./mylink.blade.php">My links</a></li>
                 <li><a href="">Log in </a></li>
                     <li class="register"><a href="#">Register</a></li>
                 </ul>>
